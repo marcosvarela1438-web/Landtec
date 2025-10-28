@@ -12,14 +12,14 @@ export default function ProductosPage() {
 
     const categories = ['Todos', ...new Set(products.map((p) => p.category))];
   // Subcategorías únicas para la categoría seleccionada
-  const subcategories = useMemo(() => {
-    if (selectedCategory === 'Todos') return [];
-    const subs = products
-      .filter((p) => p.category === selectedCategory)
-      .map((p) => p.subcategory)
-      .filter(Boolean);
-    return ['Todos', ...new Set(subs)];
-  }, [selectedCategory]);
+const subcategories = useMemo(() => {
+  if (selectedCategory === 'Todos') return [];
+  const subs = products
+    .filter((p) => p.category === selectedCategory)
+    .map((p) => p.subcategory)
+    .filter((sub): sub is string => Boolean(sub)); // 👈 esto aclara el tipo
+  return ['Todos', ...new Set(subs)];
+}, [selectedCategory]);
 
   // Filtrado principal
   const filteredProducts = useMemo(() => {
