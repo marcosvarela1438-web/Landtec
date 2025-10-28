@@ -1,0 +1,140 @@
+[
+  {
+    "id": 1,
+    "title": "PROTECTOR BIPOLAR 220V",
+    "shortDescription": "Indic. luminoso de falla DMP-1 220V",
+    "description": "El  Protector Bipolar DMP-1  ha sido desarrollado para ser un eficaz  limitador de sobretensiones  en Sistemas Integrales de Protección contra descargas eléctricas atmosféricas y transitorios eléctricos en general. Basa su funcionamiento en varistores (resistores no lineales) de óxido metálico de alta capacidad de conducción de corriente y gran velocidad de operación (componentes importados, fabricados bajo exigentes estándares internacionales de calidad). ",
+    "extraDescription": "Ideal para instalaciones industriales, edificios altos y entornos donde se requiera la máxima eficiencia en protección.",
+    "images": [
+      "/productos/protector_bipolar_220v.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Bipolar"
+  },
+  {
+    "id": 2,
+    "title": "PROTECTOR BIPOLAR 110V",
+    "shortDescription": "Indic. luminoso de falla DMP-2",
+    "images": [
+      "/productos/protector_bipolar_110v.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Bipolar"
+  },
+  {
+    "id": 3,
+    "title": "PROTECTOR BIPOLAR 24V",
+    "shortDescription": "Indic. luminoso de falla DMP-SE",
+    "images": [
+      "/productos/protector_bipolar_24v.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Bipolar"
+  },
+  {
+    "id": 4,
+    "title": "PROTECTOR BIPOLAR 48V",
+    "shortDescription": "Indic. luminoso de falla DMP-BT",
+    "images": [
+      "/productos/protector_bipolar_48v.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Bipolar"
+  },
+  {
+    "id": 5,
+    "title": "PROTECTOR BIPOLAR 220V 36kA",
+    "shortDescription": "Indic. luminoso de falla DMP-1 36kA",
+    "images": [
+      "/productos/protector_bipolar_220v36kA.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Bipolar"
+  },
+  {
+    "id": 6,
+    "title": "PARARRAYO ACTIVO",
+    "shortDescription": "IRAM 2426 LD-1000",
+    "images": [
+      "/productos/pararrayo_activo.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Pararrayos"
+  },
+  {
+    "id": 7,
+    "title": "PARARRAYOS TIPO FRANKLIN DE UNA PUNTA",
+    "shortDescription": "LD-300",
+    "images": [
+      "/productos/pararrayos_franklin.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Pararrayos"
+  },
+  {
+    "id": 8,
+    "title": "PROTECTOR TETRAPOLAR",
+    "shortDescription": "Indic. luminoso de falla DMP-3",
+    "images": [
+      "/productos/protector_tetrapolar.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Tetrapolar"
+  },
+  {
+    "id": 9,
+    "title": "PROTECTOR TETRAPOLAR 84kA",
+    "shortDescription": "Indic. luminoso de falla DMP-3 84kA",
+    "images": [
+      "/productos/protector_tetrapolar_84kA.png"
+    ],
+    "category": "Barreras Protectoras",
+    "subcategory": "Tetrapolar"
+  },
+  {
+    "id": 10,
+    "title": "CT-50",
+    "shortDescription": "Equipotencializador de PAT c/filtro AF",
+    "images": [
+      "/productos/ct_50.png"
+    ],
+    "category": "Descargas Atmosféricas"
+  },
+  {
+    "id": 11,
+    "title": "MP-4000",
+    "shortDescription": "Central d/protección trifásica (Protec. R S T + N)",
+    "images": [
+      "/productos/mp_4000.png"
+    ],
+    "category": "Descargas Atmosféricas"
+  },
+  {
+    "id": 12,
+    "title": "CENTRAL PROTECTORA PARA 2 LÍNEAS TELEFONICAS",
+    "shortDescription": "MPT-2",
+    "images": [
+      "/productos/central_protectora_2_lineas.png"
+    ],
+    "category": "Descargas Atmosféricas"
+  },
+  {
+    "id": 13,
+    "title": "CENTRAL PROTECTORA PARA 5 LÍNEAS TELEFONICAS",
+    "shortDescription": "MPT-5",
+    "images": [
+      "/productos/central_protectora_5_lineas.png"
+    ],
+    "category": "Descargas Atmosféricas"
+  },
+  {
+    "id": 14,
+    "title": "CENTRAL PROTECTORA PARA 10 LÍNEAS TELEFONICAS",
+    "shortDescription": "MPT-10",
+    "images": [
+      "/productos/central_protectora_10_lineas.png"
+    ],
+    "category": "Descargas Atmosféricas"
+  }
+
+]
