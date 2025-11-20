@@ -27,32 +27,32 @@ const MotionImage = motion(Image);
 
 const products = [
   {
-    name: 'Barreras Protectoras',
+    name: 'Protectores contra Sobretension',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, vero aut accusantium, quas quisquam voluptas veritatis nihil consequatur tenetur perferendis omnis beatae fuga quod nobis quos odit error, inventore ex.",
-    image: '/productos/mp_4000.png',
-    href: '/productos/pararrayos',
+      "Los picos de tensión son aumentos muy bruscos e intempestivos que afectan la forma de onda de la tensión provista por la compañía eléctrica. Se caracterizan por alcanzar valores muy elevados en fracciones de tiempo extremadamente cortas. Pueden ser producidos por descargas atmosféricas o por maniobras en la red eléctrica. Estos eventos son altamente dañinos y pueden afectar a todos los artefactos electrónicos conectados.",
+    image: '/productos/1000325631.png',
+    href: '/protectores-contra-sobretension',
   },
   {
-    name: 'Descargas Armosféricas',
+    name: 'Pararrayos',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, vero aut accusantium, quas quisquam voluptas veritatis nihil consequatur tenetur perferendis omnis beatae fuga quod nobis quos odit error, inventore ex.",
-    image: '/productos/mp_4000.png',
-    href: '/productos/supresores',
+      "Los pararrayos comunes (Tipo Franklin) poseen un radio de cobertura limitado (que depende de la altura de instalacion), cuando el area a proteger es muy grande, se deben colocar varias puntas captoras, lo que encarece el proyecto. Para evitarlo, en Landtec desarrollamos otro tipo.",
+    image: '/productos/1000325632.png',
+    href: '/pararrayos',
   },
   {
-    name: 'Electrodos Dinámicos',
+    name: 'Puestas a Tierra',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, vero aut accusantium, quas quisquam voluptas veritatis nihil consequatur tenetur perferendis omnis beatae fuga quod nobis quos odit error, inventore ex.",
-    image: '/productos/mp_4000.png',
-    href: '/productos/puesta-a-tierra',
+      "Para la proteccion de los equipamientos, y de las personas que usen nuestra instalacion electrica, es indispensable lograr un bajo valor de resistencia de PAT y que ademas permanezca estable en el tiempo. Pero muchas veces los distintos tipos de suelo no ayudan a conseguirlo. Agregar sales minerales al momento de colocar una jabalina puede ayudar en el momento, pero con el correr del tiempo, las sales se disuelven y nuestro valor de PAT vuelve a subir. Para evitarlo, tenemos la solucion.",
+    image: '/productos/1000325629.png',
+    href: '/puesta-a-tierra',
   },
   {
     name: 'Vías de Chispas',
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto, vero aut accusantium, quas quisquam voluptas veritatis nihil consequatur tenetur perferendis omnis beatae fuga quod nobis quos odit error, inventore ex.",
-    image: '/productos/mp_4000.png',
-    href: '/productos/accesorios',
+      "",
+    image: '/productos/1000325626.png',
+    href: '/vias-de-chispas',
   },
 ];
 
@@ -94,7 +94,7 @@ function ProductBlock({ name, description, image, href, reverse }: ProductBlockP
     >
         
       {/* 🖼️ Imagen con efecto de encuadre */}
-<Box flex="0 0 40%" position="relative" h="400px" overflow="hidden">
+<Box flex="0 0 40%" position="relative" h="500px" overflow="hidden">
         <MotionImage
           src={image}
           alt={name}

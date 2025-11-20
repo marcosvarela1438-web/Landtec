@@ -24,7 +24,7 @@ export default function FichasTecnicasPage() {
     //   w={'100%'}
       justify="center"
       minH="100vh"
-      bg="gray.50"
+      bg="black"
       p={6}
       position="relative"
       overflow="hidden"
@@ -37,7 +37,7 @@ export default function FichasTecnicasPage() {
           boxShadow="xl"
           objectFit="contain"
           w="100%"
-          h={{ base: '300px', md: '1200px' }}
+          h={{ base: '300px', md: '1000px' }}
           transition="opacity 0.6s ease-in-out"
         />
 

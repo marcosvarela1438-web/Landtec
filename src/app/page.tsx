@@ -27,6 +27,9 @@ import { useColorModeValue } from '@/components/ui/color-mode';
 import { FaWhatsapp } from 'react-icons/fa';
 import { TypeAnimation } from 'react-type-animation';
 import ProductsSection from '@/components/ui/productSesion';
+import Clients from '@/components/ui/clients';
+import ContactSection from '@/components/ui/contactSection';
+import HomeSection from '@/components/ui/homeSection';
 
 const MotionBox = motion(Box);
 const images = [Thunder1, Thunder2, Thunder3, Thunder4];
@@ -64,199 +67,44 @@ export default function HomePage() {
     return () => clearInterval(interval);
   }, [isDesktop]);
 
- const controlsLeft = useAnimation();
-  const controlsRight = useAnimation();
-  const [ref, inView] = useInView({ threshold: 0.3 });
+//  const controlsLeft = useAnimation();
+//   const controlsRight = useAnimation();
+//   const [ref, inView] = useInView({ threshold: 0.3 });
 
-  useEffect(() => {
-    if (inView) {
-      // 🔹 Cuando entra en pantalla → aparece
-      controlsLeft.start({ x: 0, opacity: 1, transition: { duration: 0.8 } });
-      controlsRight.start({ x: 0, opacity: 1, transition: { duration: 0.8 } });
-    } else {
-      // 🔹 Cuando sale de pantalla → desaparece
-      controlsLeft.start({ x: -100, opacity: 0, transition: { duration: 0.6 } });
-      controlsRight.start({ x: 100, opacity: 0, transition: { duration: 0.6 } });
-    }
-  }, [controlsLeft, controlsRight, inView]);
+//   useEffect(() => {
+//     if (inView) {
+//       // 🔹 Cuando entra en pantalla → aparece
+//       controlsLeft.start({ x: 0, opacity: 1, transition: { duration: 0.8 } });
+//       controlsRight.start({ x: 0, opacity: 1, transition: { duration: 0.8 } });
+//     } else {
+//       // 🔹 Cuando sale de pantalla → desaparece
+//       controlsLeft.start({ x: -100, opacity: 0, transition: { duration: 0.6 } });
+//       controlsRight.start({ x: 100, opacity: 0, transition: { duration: 0.6 } });
+//     }
+//   }, [controlsLeft, controlsRight, inView]);
 
-  const bgLeft = useColorModeValue('#000', 'teal.700');
-  const bgRight = useColorModeValue('gray.100', 'gray.700');
+//   const bgLeft = useColorModeValue('#000', 'teal.700');
+//   const bgRight = useColorModeValue('gray.100', 'gray.700');
 
   return (
     <Box textAlign="center" bg={'blackAlpha.900'} fontFamily={'sans-serif'}>
-      <Flex
-      mx={'5%'}
-      // my={'2%'}
-      py={5}
-        direction={{ base: 'column', md: 'row' }}
-        w="90%"
-        gap={{ base: '3%', md: '5%' }}
-        align="center"
-        color={'white'}
-      >
-        {/* Texto */}
-        <Flex
-          direction="column"
-          w={{ base: '100%', md: '50%' }}
-          gap="5%"
-          mb={{ base: 6, md: 0 }}
-        >
-                <MotionVStack
-        padding={4}
-        position="relative"
-        zIndex={1}
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-        gap={10}
-      >
-        <Heading
-          as="h1"
-          fontSize={{ base: '2xl', md: '4xl', lg: '4xl' }}
-          fontWeight="bold"
-          lineHeight="shorter"
-          textTransform="uppercase"
-        >
-          MÁXIMA TECNOLOGÍA EN PROTECCIÓN CONTRA RAYOS
-        </Heading>
 
-        <Text
-          fontSize={{ base: 'lg', md: '2xl' }}
-          fontWeight="semibold"
-          color="blue.300"
-          minH="40px" // asegura que el espacio no cambie durante la animación
-        >
-          <TypeAnimation
-            sequence={[
-              'Innovación y confianza para la seguridad eléctrica.', // texto a escribir
-              2000, // espera 2 segundos
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={0} // no repite
-          />
-        </Text>
+      <HomeSection/>
 
-        <Text
-          maxW="800px"
-          fontSize={{ base: 'md', md: 'lg' }}
-          color="gray.200"
-        >
-          En <strong>LANDTEC S.R.L.</strong>, desarrollamos y fabricamos sistemas
-          de protección contra sobretensiones y descargas atmosféricas. Más de 20
-          años de experiencia nos respaldan, garantizando calidad, asesoramiento
-          y certificaciones IRAM.
-        </Text>
-      </MotionVStack>
-        </Flex>
-
-        {/* Imagen con transición */}
-        <Flex w={{ base: '90%', md: '50%' }} justify="center">
-          {isDesktop ? (
-            <Box position="relative" w="100%" h="100%" overflow="hidden">
-              <AnimatePresence mode="wait">
-                <MotionImage
-                  key={images[index].src}
-                  src={images[index].src}
-                  alt={`Thunder ${index + 1}`}
-                  w="90%"
-                  borderRadius="md"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 1.2 }}
-                />
-              </AnimatePresence>
-            </Box>
-          ) : (
-            // En móvil: una sola imagen fija
-            <Image src={Thunder4.src} w="100%" borderRadius="md" />
-          )}
-        </Flex>
-      </Flex>
-
-{/* PRODUCTOS */}
-        
-      {/*  <Flex
-      direction="column"
-      align="center"
-      // w="110%"
-      
-      mx="auto"
-      p={5}
-      my={12}
-      textAlign="center"
-      bg={'gray.300'}
-    >
-      <Heading mb={8} fontSize={{ base: '2xl', md: '3xl' }}>
-        Algunos de nuestros productos
-      </Heading>
-
-
-      <Flex
-        justify="space-between"
-        wrap="wrap"
-        gap={6}
-        w="100%"
-        direction={{ base: 'column', md: 'row' }}
-      >
-        {products.map((product, i) => (
-          <Box
-            key={i}
-            bg={'red.400'}
-            borderRadius="lg"
-            boxShadow="md"
-            w={{ base: '100%', md: '30%' }}
-            overflow="hidden"
-            transition="all 0.3s"
-            _hover={{ transform: 'translateY(-5px)', boxShadow: 'lg' }}
-          >
-            <Image
-            mt={5}
-              src={product.image.src}
-              alt={product.title}
-              w="100%"
-              h="200px"
-              objectFit="cover"
-            />
-            <Box p={4}>
-              <Heading fontSize="xl" mb={2}>
-                {product.title}
-              </Heading>
-              <Text fontSize="md" color="gray.600">
-                {product.description}
-              </Text>
-            </Box>
-          </Box>
-        ))}
-      </Flex>
-
-
-      <Link href="/productos">
-      <Button
-        colorScheme="teal"
-        mt={10}
-        size="lg"
-      >
-        Ver más productos
-      </Button>
-      </Link>
-     </Flex> */}
-
-
-{/* <Flex bg={'white'} h={200}> PROBANDO COSASS :....</Flex> */}
 
 <ProductsSection/>
 
 
 
+<Clients/>
 
 
 
-{/* CONTACTO */}
+  <Box id="contacto">
+    <ContactSection />
+  </Box>
 
-     <Flex
+     {/* <Flex
       ref={ref}
       direction={{ base: 'column', md: 'row' }}
       justify="center"
@@ -267,7 +115,6 @@ export default function HomePage() {
       py={10}
       gap={6}
     >
-      {/* BOX IZQUIERDO */}
       <MotionBox
         bg={bgLeft}
         color="white"
@@ -300,7 +147,6 @@ export default function HomePage() {
         </Text>
       </MotionBox>
 
-      {/* BOX DERECHO */}
       <MotionBox
         bg={bgRight}
         borderRadius="lg"
@@ -320,7 +166,7 @@ export default function HomePage() {
           </Button>
         </VStack>
       </MotionBox>
-    </Flex>
+    </Flex> */}
 
     </Box>
   );

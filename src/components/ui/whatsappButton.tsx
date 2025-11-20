@@ -7,7 +7,7 @@ export default function WhatsAppButton() {
   return (
     <Link
       href="https://wa.me/5491123456789?text=Hola!%20Quisiera%20más%20información%20sobre%20sus%20productos."
-    //   isExternal
+  target="_blank"
       position="fixed"
       bottom="30px"
       right="30px"

@@ -1,22 +1,35 @@
 "use client";
 
 import { EmailIcon } from "@chakra-ui/icons";
-import { Box, Flex, HStack, Icon, Image, Link, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Flex, HStack, Icon, Image, Link, Menu, Portal, Text, VStack } from "@chakra-ui/react";
 import NextLink from "next/link";
-import { FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
+import { FaChevronDown, FaInstagram, FaMapMarkerAlt, FaWhatsapp } from "react-icons/fa";
 import Logo from '../../../public/logo_negro.png'
+import { useEffect, useState } from "react";
 
 const links = [
   { name: 'Inicio', href: '/' },
   { name: 'Nosotros', href: '/fichas-tecnicas' },
   { name: 'Productos', href: '/productos' },
   { name: 'Fichas Técnicas', href: '/fichas-tecnicas' },
-  { name: 'Contacto', href: '/fichas-tecnicas' },
+  { name: 'Contacto', href: '/#contacto' },
 ];
+
+  const productos = [
+    { name: "Barreras Protectoras", href: "/barreras-protectoras" },
+    { name: "Descargas Atmosfericas", href: "/descargas-atmosfericas" },
+    { name: "Electrodos Dinamicos", href: "/electrodos-dinamicos" },
+    { name: "Vias de Chispas", href: "/vias-de-chispas" },
+  ];
 
 export default function Footer() {
 
-         const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+        //  const currentPath = typeof window !== 'undefined' ? window.location.pathname : '';
+           const [currentPath, setCurrentPath] = useState('');
+         
+         useEffect(() => {
+           setCurrentPath(window.location.pathname);
+         }, []);
 
   return (
     <Box bg="#000" color="white" textAlign={'center'}>
@@ -30,6 +43,70 @@ export default function Footer() {
           >
             {links.map((link) => {
               const isActive = currentPath === link.href;
+
+              if (link.name === 'Productos') {
+                            return (
+                              <Menu.Root key={link.name}>
+                                <Menu.Trigger asChild p={0}>
+                                  <Button
+                                    variant="ghost"
+                                    color="white"
+                                    fontSize={18}
+                                    fontWeight="normal"
+                                    bg={'none'}
+                                    position="relative"
+                                    _after={{
+                                      content: '""',
+                                      position: 'absolute',
+                                      bottom: 0,
+                                      left: 0,
+                                      width: isActive ? '100%' : '0%',
+                                      height: '2px',
+                                      backgroundColor: 'white',
+                                      transition: 'width 0.3s ease-in-out',
+                                    }}
+                                    _hover={{
+                                      _after: { width: '100%' },
+                                      bg:'none'
+                                    }}
+                                    _active={{ bg: 'transparent' }}
+                                  >
+                                     {link.name}<FaChevronDown />
+                                  </Button>
+                                </Menu.Trigger>
+              
+                                <Portal>
+                                  <Menu.Positioner>
+                              <Menu.Content
+                                bg="gray.900"
+                                border="1px solid"
+                                borderColor="gray.700"
+                                rounded="md"
+                                shadow="lg"
+                                py={2}
+                                zIndex={2000}
+                              >
+                                {productos.map((p) => (
+                                  <Link
+                                    key={p.name}
+                                    as={NextLink}
+                                    href={p.href}
+                                    display="block"
+                                    px={4}
+                                    py={2}
+                                    color="gray.100"
+                                    _hover={{ bg: "gray.700", color: "teal.200" }}
+                                    textAlign="left"
+                                  >
+                                    {p.name}
+                                  </Link>
+                                ))}
+                              </Menu.Content>
+                            </Menu.Positioner>
+                                </Portal>
+                              </Menu.Root>
+                            );
+                          }
 
         return (
           <Link
@@ -90,7 +167,7 @@ export default function Footer() {
       {/* 📍 Ubicación */}
       <Link
         href="https://www.google.com/maps?q=Administraci%C3%B3n+y+Ventas:+Jer%C3%B3nimo+Cortez+727,+Alta+C%C3%B3rdoba,+C%C3%B3rdoba,+Argentina"
-        // isExternal
+  target="_blank"
         display="flex"
         alignItems="center"
         _hover={{ color: 'teal.200' }}
@@ -104,7 +181,7 @@ export default function Footer() {
       {/* 💬 WhatsApp */}
       <Link
         href="https://wa.me/5491123456789?text=Hola!%20Quisiera%20consultar%20por%20el%20área%20de%20ventas."
-        // isExternal
+  target="_blank"
         display="flex"
         alignItems="center"
         _hover={{ color: 'teal.200' }}
@@ -118,7 +195,7 @@ export default function Footer() {
       {/* 📸 Instagram */}
       <Link
         href="https://www.instagram.com/miempresa"
-        // isExternal
+  target="_blank"
         display="flex"
         alignItems="center"
         _hover={{ color: 'teal.200' }}
