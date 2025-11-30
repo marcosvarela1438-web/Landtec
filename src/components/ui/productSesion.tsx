@@ -22,12 +22,11 @@ interface ProductBlockProps {
   reverse?: boolean;
 }
 
-// const MotionImage = motion(Image);
 const MotionImage = motion(Image);
 
 const products = [
   {
-    name: 'Protectores contra Sobretension',
+    name: 'Protectores contra Sobretensión',
     description:
       "Los picos de tensión son aumentos muy bruscos e intempestivos que afectan la forma de onda de la tensión provista por la compañía eléctrica. Se caracterizan por alcanzar valores muy elevados en fracciones de tiempo extremadamente cortas. Pueden ser producidos por descargas atmosféricas o por maniobras en la red eléctrica. Estos eventos son altamente dañinos y pueden afectar a todos los artefactos electrónicos conectados.",
     image: '/productos/1000325631.png',
@@ -36,21 +35,21 @@ const products = [
   {
     name: 'Pararrayos',
     description:
-      "Los pararrayos comunes (Tipo Franklin) poseen un radio de cobertura limitado (que depende de la altura de instalacion), cuando el area a proteger es muy grande, se deben colocar varias puntas captoras, lo que encarece el proyecto. Para evitarlo, en Landtec desarrollamos otro tipo.",
+      "Los pararrayos comunes (tipo Franklin) poseen un radio de cobertura limitado, que depende de la altura de instalación. Cuando el área a proteger es muy grande, se deben colocar varias puntas captoras, lo que encarece el proyecto. Para evitarlo, en Landtec desarrollamos otra solución.",
     image: '/productos/1000325632.png',
     href: '/pararrayos',
   },
   {
     name: 'Puestas a Tierra',
     description:
-      "Para la proteccion de los equipamientos, y de las personas que usen nuestra instalacion electrica, es indispensable lograr un bajo valor de resistencia de PAT y que ademas permanezca estable en el tiempo. Pero muchas veces los distintos tipos de suelo no ayudan a conseguirlo. Agregar sales minerales al momento de colocar una jabalina puede ayudar en el momento, pero con el correr del tiempo, las sales se disuelven y nuestro valor de PAT vuelve a subir. Para evitarlo, tenemos la solucion.",
+      "Para la protección de los equipamientos y de las personas que utilicen nuestra instalación eléctrica, es indispensable lograr un bajo valor de resistencia de PAT que además permanezca estable en el tiempo. Sin embargo, los distintos tipos de suelo muchas veces dificultan este objetivo. Agregar sales minerales puede ayudar momentáneamente, pero con el tiempo se disuelven y el valor de la PAT vuelve a subir. Para evitarlo, ofrecemos la solución adecuada.",
     image: '/productos/1000325629.png',
     href: '/puesta-a-tierra',
   },
   {
     name: 'Vías de Chispas',
     description:
-      "",
+      "Vías de chispas para juntas aisladas (equipotencializadores para estructuras con potenciales diferentes, permanentes o temporales).",
     image: '/productos/1000325626.png',
     href: '/vias-de-chispas',
   },
@@ -58,10 +57,17 @@ const products = [
 
 export default function ProductsSection() {
   return (
-    <Box as="section" bg='#000' color="gray.800" py={5}>
-        <Heading bg='blackAlpha.900' color={'white'} fontSize={'5xl'}>
-            Nuestros Productos
-            </Heading>
+    <Box as="section" bg="#000" color="gray.800" py={10}>
+      <Heading
+        // bg="black"
+        color="white"
+        fontSize={{ base: '3xl', md: '5xl' }}
+        textAlign="center"
+        mb={10}
+      >
+        Nuestros Productos
+      </Heading>
+
       {products.map((product, i) => (
         <ProductBlock key={product.name} {...product} reverse={i % 2 !== 0} />
       ))}
@@ -71,91 +77,88 @@ export default function ProductsSection() {
 
 function ProductBlock({ name, description, image, href, reverse }: ProductBlockProps) {
   const ref = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center center'],
   });
 
- const x = useTransform(scrollYProgress, [0, 1], reverse ? ['150px', '0px'] : ['-150px', '0px']);
+  const x = useTransform(scrollYProgress, [0, 1], reverse ? ['150px', '0px'] : ['-150px', '0px']);
   const opacity = useTransform(scrollYProgress, [0, 0.3, 1], [0, 0.8, 1]);
 
   return (
     <Flex
       ref={ref}
-      direction={reverse ? 'row-reverse' : 'row'}
+      direction={{
+        base: 'column',
+        md: reverse ? 'row-reverse' : 'row',
+      }}
       align="center"
       justify="space-between"
-    //   minH="100vh"
-      bg={'blackAlpha.900'}
-      px={{ base: 6, md: 16 }}
-    //   py={12}
-    pt={5}
-      gap={8}
+      bg="blackAlpha.900"
+      px={{ base: 4, md: 16 }}
+      py={{ base: 10, md: 16 }}
+      gap={{ base: 10, md: 8 }}
     >
-        
-      {/* 🖼️ Imagen con efecto de encuadre */}
-<Box flex="0 0 40%" position="relative" h="500px" overflow="hidden">
+      {/* Imagen */}
+      <Box
+        flex={{ base: '0 0 100%', md: '0 0 40%' }}
+        h={{ base: '250px', md: '450px' }}
+        position="relative"
+        overflow="hidden"
+      >
         <MotionImage
           src={image}
           alt={name}
-        //   fill
           style={{ x, opacity }}
-          sizes="(max-width: 768px) 100vw, 40vw"
           className="rounded-xl object-contain"
+          w="100%"
+          h="100%"
           transition={{ type: 'spring', stiffness: 80, damping: 20 }}
         />
       </Box>
 
-      {/* 📝 Texto */}
+      {/* Texto */}
       <VStack
-        flex="0 0 50%"
-        align={reverse ? 'flex-end' : 'flex-start'}
-        textAlign={reverse ? 'right' : 'left'}
-        padding={4}
-        gap={5}
-        color={'white'}
+        flex={{ base: '0 0 100%', md: '0 0 50%' }}
+        align={{
+          base: 'center',
+          md: reverse ? 'flex-end' : 'flex-start',
+        }}
+        textAlign={{
+          base: 'center',
+          md: reverse ? 'right' : 'left',
+        }}
+        padding={5}
+        color="white"
       >
-        <Heading
-          as="h2"
-          fontSize={{ base: '2xl', md: '4xl' }}
-          fontWeight="bold"
-        >
+        <Heading fontSize={{ base: '2xl', md: '4xl' }}>
           {name}
         </Heading>
+
         <Text fontSize={{ base: 'md', md: 'xl' }} maxW="600px">
           {description}
         </Text>
-        <Flex></Flex>
-        <Link
-        justifyContent={'center'}
-        alignSelf={'center'}
-          as={NextLink}
-          href={href}
-          colorScheme="blue"
-          color={'white'}
-          textDecoration= 'none'
-        //   size="lg"
-        //   mt={4}
-        >
-           <Button
-        //    as={NextLink}
-    //   href="/productos"
-      size="lg"
-      px={10}
-      py={6}
-      fontSize="xl"
-      borderRadius="full" // 🔹 bordes redondeados
-      textDecoration="none" // 🔹 sin subrayado
-      color="black"
-      bg="white"
-      _hover={{
-        bg: 'gray.900',
-        color: 'white',
-        // textDecoration: 'none',
-      }}
-      transition="all 0.3s ease" // 🔹 transición suave
-      fontWeight="bold"
-      boxShadow="md">Ver Más</Button>
+
+        <Link as={NextLink} href={href} textDecoration="none">
+          <Button
+            size={{ base: 'md', md: 'lg' }}
+            px={10}
+            py={6}
+            fontSize={{ base: 'md', md: 'xl' }}
+            borderRadius="full"
+            color="black"
+            bg="white"
+            _hover={{
+              bg: 'gray.900',
+              color: 'white',
+            }}
+            fontWeight="bold"
+            boxShadow="md"
+            transition="all 0.3s ease"
+          >
+            Ver Más
+          </Button>
         </Link>
       </VStack>
     </Flex>

@@ -20,10 +20,10 @@ export default function Clients() {
       bg="white"
       py={{ base: 10, md: 16 }}
       textAlign="center"
-      fontFamily={'sans-serif'}
+      fontFamily="sans-serif"
     >
       <Heading
-        mb={10}
+        mb={{ base: 6, md: 10 }}
         fontSize={{ base: "2xl", md: "4xl" }}
         fontWeight="bold"
         color="black"
@@ -31,17 +31,17 @@ export default function Clients() {
         Empresas que confiaron en nosotros
       </Heading>
 
-      <Marquee gradient={false} speed={50}>
+      <Marquee gradient={false} speed={45}>
         {logos.map((logo, index) => (
-          <Box key={index} mx={10}>
+          <Box key={index} mx={{ base: 6, md: 10 }}>
             <Image
               src={logo}
               alt={`Logo ${index}`}
-              h={{ base: "50px", md: "70px" }}
+              h={{ base: "45px", md: "70px" }}
               objectFit="contain"
               opacity={0.8}
               _hover={{ opacity: 1 }}
-              transition="all 0.2s"
+              transition="opacity 0.25s ease-in-out"
             />
           </Box>
         ))}

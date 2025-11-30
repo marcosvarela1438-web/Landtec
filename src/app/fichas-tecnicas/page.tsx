@@ -30,6 +30,11 @@ export default function FichasTecnicasPage() {
       overflow="hidden"
     >
       <Box position="relative" w="100%">
+        <a
+    href={images[currentIndex]}
+    download
+    style={{ display: "block" }}
+  >
         <Image
           src={images[currentIndex]}
           alt={`Ficha técnica ${currentIndex + 1}`}
@@ -40,7 +45,7 @@ export default function FichasTecnicasPage() {
           h={{ base: '300px', md: '1000px' }}
           transition="opacity 0.6s ease-in-out"
         />
-
+</a>
         {/* Botón Anterior */}
         <IconButton
           aria-label="Anterior"

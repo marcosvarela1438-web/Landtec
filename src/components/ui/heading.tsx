@@ -29,10 +29,11 @@ export const HeadingSection = ({ title, description }: SectionContainerProps) =>
 
         {description && (
           <Text
-            mt={3}
+            mt={4}
             fontSize={{ base: "md", md: "lg" }}
             color="gray.700"
-            maxW="70%"
+            maxW={{ base: "100%", md: "70%" }}  // más responsive
+            lineHeight="1.7"
           >
             {description}
           </Text>

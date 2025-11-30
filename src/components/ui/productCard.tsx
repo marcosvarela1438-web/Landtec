@@ -35,22 +35,21 @@ export default function ProductCard({
       justify="space-between"
       w="100%"
       my={4}
-    py={5}
+      py={6}
       px={{ base: 2, md: 6 }}
       gap={10}
-      // _hover={{
-      //   transform: 'translateY(-4px)',
-      //   transition: 'all 0.3s ease',
-      // }}
       borderRadius="2xl"
-      border={'1px solid white'}
+      border="1px solid white"
     >
-
-      <Box flex={{ base: '0 0 100%', md: '0 0 35%' }} textAlign="center">
+      {/* 🖼️ Imagen */}
+      <Box
+        flex={{ base: '0 0 100%', md: '0 0 35%' }}
+        textAlign="center"
+      >
         <Image
           src={image}
           alt={title}
-  borderRadius="2xl"
+          borderRadius="2xl"
           w="100%"
           maxW="480px"
           mx="auto"
@@ -59,7 +58,15 @@ export default function ProductCard({
         />
       </Box>
 
-       <VStack align="start" padding={4} flex="1" color="gray.100">
+      {/* 📄 Texto & Contenido */}
+      <VStack
+        align={{ base: 'center', md: 'start' }}
+        textAlign={{ base: 'center', md: 'left' }}
+        padding={4}
+        flex="1"
+        color="gray.100"
+      >
+        {/* ⭐ Título */}
         <HStack padding={3}>
           <Icon as={Sparkles} color="blue.400" boxSize={6} />
           <Heading
@@ -68,12 +75,13 @@ export default function ProductCard({
             fontWeight="extrabold"
             bgGradient="linear(to-r, blue.400, cyan.400)"
             bgClip="text"
-            color={'white'}
+            color="white"
           >
             {title}
           </Heading>
         </HStack>
 
+        {/* 📝 Descripción */}
         <Text
           fontSize={{ base: 'md', md: 'lg' }}
           color="gray.300"
@@ -83,6 +91,7 @@ export default function ProductCard({
           {description}
         </Text>
 
+        {/* Línea decorativa */}
         <Box
           w="60px"
           h="3px"
@@ -91,8 +100,14 @@ export default function ProductCard({
           my={2}
         />
 
+        {/* ✔️ Features */}
         {features.length > 0 && (
-          <VStack align="stretch" padding={3} mt={2}>
+          <VStack
+            align="stretch"
+            padding={3}
+            mt={2}
+            w="100%"
+          >
             {features.map((f, idx) => (
               <HStack
                 key={idx}
@@ -113,6 +128,7 @@ export default function ProductCard({
           </VStack>
         )}
 
+        {/* ⭐ Footer */}
         <HStack pt={4} padding={2} opacity={0.8}>
           <Icon as={Star} color="yellow.400" boxSize={5} />
           <Text fontSize="sm" color="gray.400">
