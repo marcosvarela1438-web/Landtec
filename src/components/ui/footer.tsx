@@ -62,7 +62,7 @@ export default function Footer() {
   direction={{ base: "column", md: "row" }}
   mx={5}
   justify={{ base: "flex-start", md: "space-between" }}
-  w="100%"
+  // w="100%"
   p={5}
   gap={{ base: 10, md: 0 }}
 >
@@ -194,7 +194,7 @@ export default function Footer() {
       <Link href="mailto:ventas@landtec.com.ar" _hover={{ color: "white" }} color={'white'}>
         <HStack>
           <Icon as={EmailIcon} boxSize={5} />
-          <Text>ventas@landtec.com.ar</Text>
+          <Text>Área de Ventas</Text>
         </HStack>
       </Link>
 
@@ -212,7 +212,7 @@ export default function Footer() {
 
       {/* WhatsApp */}
       <Link
-        href="https://wa.me/5491123456789?text=Hola!%20Quisiera%20consultar%20por%20el%20área%20de%20ventas."
+        href="https://wa.me/5493517583616?text=Hola!%20Quisiera%20consultar%20por%20el%20área%20de%20ventas."
         target="_blank"
         _hover={{ color: "white" }} color={'white'}
       >
@@ -224,13 +224,13 @@ export default function Footer() {
 
       {/* Instagram */}
       <Link
-        href="https://www.instagram.com/miempresa"
+        href="https://www.instagram.com/landtec.cordoba/"
         target="_blank"
         _hover={{ color: "white" }} color={'white'}
       >
         <HStack>
           <Icon as={FaInstagram} boxSize={5} />
-          <Text>@miempresa</Text>
+          <Text>@Landtec.cordoba</Text>
         </HStack>
       </Link>
     </VStack>

@@ -10,7 +10,7 @@ import HomeSection from "@/components/ui/homeSection";
 
 export default function HomePage() {
   return (
-    <Box textAlign="center" bg={"blackAlpha.900"} fontFamily={'sans-serif'}>
+    <Box textAlign="center" bg={"blackAlpha.900"} fontFamily={'sans-serif'} overflowX="hidden">
       <HomeSection />
 
       <ProductsSection />

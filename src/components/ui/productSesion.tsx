@@ -57,7 +57,7 @@ const products = [
 
 export default function ProductsSection() {
   return (
-    <Box as="section" bg="#000" color="gray.800" py={10}>
+    <Box as="section" bg="#000" color="gray.800" py={10} overflowX="hidden">
       <Heading
         // bg="black"
         color="white"
@@ -99,6 +99,7 @@ function ProductBlock({ name, description, image, href, reverse }: ProductBlockP
       px={{ base: 4, md: 16 }}
       py={{ base: 10, md: 16 }}
       gap={{ base: 10, md: 8 }}
+      overflowX="hidden" 
     >
       {/* Imagen */}
       <Box
