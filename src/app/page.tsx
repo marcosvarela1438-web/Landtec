@@ -15,7 +15,7 @@ export default function HomePage() {
 
       <ProductsSection />
 
-      <Clients />
+      {/* <Clients /> */}
 
       <Box id="contacto">
         <ContactSection />
