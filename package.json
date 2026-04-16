@@ -1,11 +1,11 @@
 {
   "name": "landtec",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev --turbopack -p 4004",
     "build": "next build --turbopack",
-    "start": "next start",
+    "start": "next start -p 4004",
     "lint": "biome check",
     "format": "biome format --write"
   },
