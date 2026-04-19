@@ -1,6 +1,7 @@
 "use client";
 
-import { EmailIcon } from "@chakra-ui/icons";
+// import { EmailIcon } from "@chakra-ui/icons";
+import { MdOutlineEmail } from "react-icons/md";
 import {
   Box,
   Button,
@@ -193,7 +194,7 @@ export default function Footer() {
       {/* Email */}
       <Link href="mailto:ventas@landtec.com.ar" _hover={{ color: "white" }} color={'white'}>
         <HStack>
-          <Icon as={EmailIcon} boxSize={5} />
+          <Icon as={MdOutlineEmail} boxSize={5} />
           <Text>Área de Ventas</Text>
         </HStack>
       </Link>

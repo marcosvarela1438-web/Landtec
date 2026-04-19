@@ -1,7 +1,8 @@
 'use client';
 
 import { Box, Flex, Image, IconButton } from '@chakra-ui/react';
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+// import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { useState } from 'react';
 
 const images = [
@@ -59,7 +60,7 @@ export default function FichasTecnicasPage() {
           shadow="md"
           _hover={{ bg: 'gray.100', color: 'black' }}
         >
-            <ChevronLeftIcon />
+            <FaArrowLeft />
         </IconButton>
 
         {/* Botón Siguiente */}
@@ -75,7 +76,7 @@ export default function FichasTecnicasPage() {
           shadow="md"
           _hover={{ bg: 'gray.100', color: 'black' }}
         >
-            <ChevronRightIcon/>
+            <FaArrowRight/>
         </IconButton>
       </Box>
 
